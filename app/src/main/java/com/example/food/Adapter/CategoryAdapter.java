@@ -18,24 +18,24 @@ import com.example.food.R;
 
 import java.util.ArrayList;
 
-public class BestFoodsAdapter extends RecyclerView.Adapter<BestFoodsAdapter.viewholder> {
+public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.viewholder> {
     ArrayList<Foods> items;
     Context context;
 
-    public BestFoodsAdapter(ArrayList<Foods> items) {
+    public CategoryAdapter(ArrayList<Foods> items) {
         this.items = items;
     }
 
     @NonNull
     @Override
-    public BestFoodsAdapter.viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public CategoryAdapter.viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         context= parent.getContext();
         View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.viewholder_best_deal, parent, false);
         return new viewholder(inflate);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull BestFoodsAdapter.viewholder holder, int position) {
+    public void onBindViewHolder(@NonNull CategoryAdapter.viewholder holder, int position) {
         holder.titleTxt.setText(items.get(position).getTitle());
         holder.priceTxt.setText("$"+items.get(position).getPrice());
         holder.timeTxt.setText(items.get(position).getTimeValue()+" min");
